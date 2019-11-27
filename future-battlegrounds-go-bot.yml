@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: future-battlegrounds-go-bot-deployment
+  labels:
+    app: future-battlegrounds-go-bot
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: future-battlegrounds-go-bot
+  template:
+    metadata:
+      labels:
+        app: future-battlegrounds-go-bot
+    spec:
+      containers:
+      - name: future-battlegrounds-go-bot
+        image: jorisd/future-battlegrounds-go-bot:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: FB_SERVER
+          value: "host.docker.internal:50051"
