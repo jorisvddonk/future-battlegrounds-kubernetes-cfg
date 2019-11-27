@@ -20,4 +20,4 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: FB_SERVER
-          value: "host.docker.internal:50051"
+          value: "future-battlegrounds:50051"
