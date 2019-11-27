@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: future-battlegrounds-deployment
+  labels:
+    app: future-battlegrounds
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: future-battlegrounds
+  template:
+    metadata:
+      labels:
+        app: future-battlegrounds
+    spec:
+      containers:
+      - name: future-battlegrounds
+        image: jorisd/future-battlegrounds:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        - containerPort: 50051
