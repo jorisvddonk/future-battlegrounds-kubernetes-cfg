@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: future-battlegrounds-ui-deployment
+  labels:
+    app: future-battlegrounds-ui
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: future-battlegrounds-ui
+  template:
+    metadata:
+      labels:
+        app: future-battlegrounds-ui
+    spec:
+      containers:
+      - name: future-battlegrounds-ui
+        image: jorisd/future-battlegrounds-ui:latest
+        imagePullPolicy: IfNotPresent
