@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: future-battlegrounds-ui
+  labels:
+    run: future-battlegrounds-ui
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: future-battlegrounds-ui
